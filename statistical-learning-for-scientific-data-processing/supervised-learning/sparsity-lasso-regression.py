@@ -1,3 +1,6 @@
+# This program demonstrates the effect of changing the alpha on the model score.
+# Alpha is the regularization strength.
+
 from __future__ import print_function
 from sklearn import datasets
 import numpy as np 
@@ -26,6 +29,6 @@ scores = [regr.set_params(alpha=alpha
 	).fit(diabetes_X_train, diabetes_y_train
 	).score(diabetes_X_test, diabetes_y_test)
 	for alpha in alphas]
-
+print("scores:", scores)
 
 print("Regression coefficients:", regr.coef_)
